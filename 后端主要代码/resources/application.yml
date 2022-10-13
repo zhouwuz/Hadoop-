@@ -1,0 +1,36 @@
+server:
+  port: 9090
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vue?serverTimezone=GMT%2b8
+    username: root
+    password: qaz14250
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #扫描所有mybatis的xml文件
+  mybatis-plus:
+    configuration:
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+management:
+  health:
+    redis:
+      enabled: false
+
+ssh1:
+  host: 10.7.120.116
+  port: 9999
+  user: root
+  password: 123456
+
+ssh2:
+  host: 10.7.120.75
+  port: 9999
+  user: root
+  password: 123456
+
+ssh3:
+  host: 10.7.120.131
+  port: 9999
+  user: root
+  password: 123456

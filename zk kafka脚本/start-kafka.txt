@@ -1,0 +1,17 @@
+#!/bin/bash
+brokers="h3m2201 h3m2202"
+KAFKA_HOME="/root/home/kafka_2.12-2.3.0"
+KAFKA_NAME="kafka_2.12-2.3.0"
+
+echo "INFO : Begin to start kafka cluster ..."
+
+for broker in $brokers
+do
+  echo "INFO : Starting ${KAFKA_NAME} on ${broker} ..."
+  ssh -p 9999 ${broker} -C "source /etc/profile; sh ${KAFKA_HOME}/bin/kafka-server-start.sh -daemon ${KAFKA_HOME}/config/server.properties"
+  if [[ $? -eq 0 ]]; then
+      echo "INFO:[${broker}] Start successfully"
+  fi
+done
+echo "INFO:Kafka cluster starts successfully !"
+~                                                                                                                       ~                                                                      

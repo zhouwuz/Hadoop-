@@ -1,0 +1,10 @@
+#!/bin/sh
+for host in h3m2202
+do
+echo "---------------------------------------------------------------------------"
+ ssh -p 9999 $host "source /etc/profile;zkServer.sh start"
+ echo "$host zk is started"
+done
+echo "---------------------------------------------------------------------------"
+
+
